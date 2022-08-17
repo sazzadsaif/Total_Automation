@@ -1,0 +1,1 @@
+{"uuid":"e289de28-38e2-4b77-bcc4-1aec1382d119","name":"mortgage_calculator.CalculateMortgageRate","children":["a5cbd50b-4409-47f6-b020-d00d0b5161dc"],"befores":[{"name":"addThread","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1660252254723,"stop":1660252256928}],"afters":[],"start":1660252254687,"stop":1660252262006}
