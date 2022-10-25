@@ -15,11 +15,9 @@ public class DriverFactory {
     private DriverFactory(){
     }
     private static final DriverFactory instance = new DriverFactory();
-
     public static DriverFactory getInstance(){
         return instance;
     }
-
     ThreadLocal<WebDriver> driver = ThreadLocal.withInitial(()-> {
         String environment = System.getProperty("environment") == null ? "local" : System.getProperty("environment");
         String browser = System.getProperty("browser") == null ? "chrome" : System.getProperty("browser");
@@ -29,7 +27,6 @@ public class DriverFactory {
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }
-
         if(environment.equals("remote") && browser.equals("chrome")){
             ChromeOptions chromeOptions = new ChromeOptions();
             return new RemoteWebDriver(gridUrl,chromeOptions);
