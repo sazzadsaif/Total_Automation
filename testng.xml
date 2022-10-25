@@ -5,7 +5,7 @@
     <test name="Mortgage_Calculator" >
         <classes>
             <class name="mortgage_calculator.CalculateMortgageRate" />
-            
+
         </classes>
 
     </test>
