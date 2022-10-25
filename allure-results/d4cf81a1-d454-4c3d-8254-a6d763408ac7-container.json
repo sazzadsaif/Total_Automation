@@ -1,0 +1,1 @@
+{"uuid":"d4cf81a1-d454-4c3d-8254-a6d763408ac7","name":"mortgage_calculator.CalculateRealAprRate","children":["2c1cf6b7-b523-48b5-a173-81d190ccb107"],"befores":[{"name":"addThread","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1666738012799,"stop":1666738017767}],"afters":[],"start":1666738012738,"stop":1666738037034}

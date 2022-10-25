@@ -1,13 +1,11 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
 
 
-<suite name="Test_Automation" verbose="1" parallel="classes" thread-count="4" >
+<suite name="Test_Automation" verbose="1"  >
     <test name="Mortgage_Calculator" >
         <classes>
             <class name="mortgage_calculator.CalculateMortgageRate" />
-            <class name="mortgage_calculator.CalculateRealAprRate"/>
-            <class name="mortgage_calculator_parameterized.CalculateRealAprRateParameterized"/>
-            <class name="mortgage_calculator_parameterized.CalculateMortgageRateParameterized"/>
+            
         </classes>
 
     </test>
