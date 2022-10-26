@@ -10,6 +10,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import page_objects.NavigationBar;
+import utilities.BaseClass;
 import utilities.DateUtils;
 import utilities.ReadConfigFiles;
 import utilities.SqlConnector;
@@ -17,24 +18,9 @@ import utilities.SqlConnector;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class CalculateMortgageRateParameterized {
-
-    private static final Logger LOGGER = LogManager.getLogger(CalculateMortgageRateParameterized.class);
-
-    WebDriver driver;
+public class CalculateMortgageRateParameterized extends BaseClass {
 
 
-    @BeforeMethod
-    public void browserInitialization(){
-        WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
-
-        LOGGER.info("-----------test name: Calculate mortgage rate-----------");
-
-        String browserUrl = ReadConfigFiles.getPropertyValues("Url");
-
-        ActOn.browser(driver).openBrowser(browserUrl);
-    }
 
     @Test
     public void calculateMonthlyPayment() {
@@ -71,18 +57,14 @@ public class CalculateMortgageRateParameterized {
             }
 
         }catch (SQLException e){
-            LOGGER.error(e.getMessage());
+            e.getMessage();
         }
 
 
 
 
     }
-    @AfterMethod
-    public void quitBrowser(){
-        LOGGER.info("-----------End test case--------------");
-        ActOn.browser(driver).closeBrowser();
-    }
+
 }
 
 

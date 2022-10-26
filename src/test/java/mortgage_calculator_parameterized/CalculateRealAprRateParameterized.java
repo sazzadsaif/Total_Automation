@@ -12,23 +12,10 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import page_objects.NavigationBar;
 import parameters.DataProviderLesson;
+import utilities.BaseClass;
 import utilities.ReadConfigFiles;
 
-public class CalculateRealAprRateParameterized {
-    private static final Logger LOGGER = LogManager.getLogger(CalculateRealAprRateParameterized.class);
-    WebDriver driver;
-
-    @BeforeMethod
-    public void openBrowser(){
-        WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
-
-        LOGGER.info("-----------test name: Calculate Real Apr Rate-----------");
-
-        String browserUrl = ReadConfigFiles.getPropertyValues("Url");
-
-        ActOn.browser(driver).openBrowser(browserUrl);
-    }
+public class CalculateRealAprRateParameterized extends BaseClass {
 
     @Test(dataProvider="RealAprRate",dataProviderClass = DataProviderLesson.class)
     public void calculateRealApr(String homePrice,String downPayment, String interestRate,String actualApr){
@@ -44,10 +31,6 @@ public class CalculateRealAprRateParameterized {
                 .validateRealApr(actualApr);
     }
 
-    @AfterMethod
-    public void closeBrowser(){
-        LOGGER.info("-----------End test case--------------");
-        ActOn.browser(driver).closeBrowser();
-    }
+
 
 }

@@ -23,7 +23,7 @@ public class DriverFactory {
         String browser = System.getProperty("browser") == null ? "chrome" : System.getProperty("browser");
         URL gridUrl = null;
         try {
-            gridUrl = new URL("www.");
+            gridUrl = new URL("http://3.80.61.126:4444/wd/hub");
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }
